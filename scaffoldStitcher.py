@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 #  python scaffoldSticher.py input.fasta "upstream flanking text" "downstream flanking text"
 # generates intermediate file for 
-
+# Copyright Mr. Sayer Herin, USDA-ARS 2016
 # loads fasta into memory as dictionary. 
 
 
