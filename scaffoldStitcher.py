@@ -29,6 +29,7 @@ chromosomes = dict() # dictionary of chromosome arms
 farecords = dict()
 
 
+
 for record in records:
 	chromosome = re.search( 'CSS_(...)_scaff', record.id ) # regular expression search in record.id
 	if 'group' not in dir(chromosome):continue
@@ -50,14 +51,16 @@ def chromSort(scaffa,scaffb):
 		return int(a.split("_")[-1])
 	return sorthelper(scaffa) < sorthelper(scaffb)
 
-sorted(chromosomes[chrom].viewitems(), key=lamda scaffold: int(scaffold[0].split("_")[-1]))
+
 
 for chrom in chromosomes:
 	start = 1
+	print chrom
+	continue
+	sorted(chromosomes[chrom], lambda scaffold, seq: int(scaffold[0].split("_")[-1]))
 	for scaffold, seq in chromosomes[chrom].viewitems():
 		start
 		end = start + len(str(seq)) - 1		
 		print chrom + "_scaffolds\t" + "scaffold_element" + "\t" + scaffold + "\t" + str(start) + "\t" + str(end) + "\t" + ".\t+\t.\tscaffold_id \"" + scaffold + "\""
 		start = end + n + 1;
-# blast scaffolds against new sequences to get scaffold names and locations or just record and print vcf
-# to be continued...
+# Its all well and good to write track, but what about liftOver chain file.
